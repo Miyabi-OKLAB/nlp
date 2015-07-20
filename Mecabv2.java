@@ -1,4 +1,4 @@
-package soundsample;
+package yourpackage;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
