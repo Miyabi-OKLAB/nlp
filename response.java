@@ -1,9 +1,21 @@
+//import java.io.*;
 
-import java.io.*;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 import java.util.Random;
 
-public class test2{
+public class response{
 	public static void main(String[] args){
 		
 		int mode = 0;
@@ -69,7 +81,25 @@ public class test2{
 /*	一致する応答文がなかった場合	現在未実装	*/
 	  		if(mode == 0){
 	  			System.out.println("応答が未実装です");
-				out = "未実装";
+				
+				int ran = rnd.nextInt(3);
+				
+				switch(ran){
+					case 0:
+						out = "すみません、わかりません。";
+						break;
+					
+					case 1:
+						out = "何と言ったのかわかりませんでした。";
+						break;
+					
+					case 2:
+						out = "今の私では答えられないです。違う質問をお願いします。";
+						break;
+					default:
+						out = "未実装です";
+						break;
+				}
 	  		}
 			
 			
@@ -85,7 +115,6 @@ public class test2{
 /*	output.txt への書き出し	*/
 			try{
 				FileWriter outfile = new FileWriter( new File("output.txt") );
-				
 				outfile.write(out);
 				
 				outfile.close();
